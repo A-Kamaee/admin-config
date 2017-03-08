@@ -23,7 +23,6 @@ class Entry {
             entry.values[field.name()] = field.defaultValue();
         });
         return entry;
-
     }
 
     /**
@@ -40,8 +39,9 @@ class Entry {
         let values = cloneAndFlatten(restEntry, excludedFields);
 
         fields.forEach(field => {
+            let displayName = field.displayName() || field.name();
             let fieldName = field.name();
-            values[fieldName] = field.getMappedValue(values[fieldName], values);
+            values[displayName] = field.getMappedValue(values[fieldName], values);
         });
 
         return new Entry(entityName, values, values[identifierName]);

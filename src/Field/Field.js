@@ -2,6 +2,7 @@ import stringUtils from "../Utils/stringUtils";
 
 class Field {
     constructor(name) {
+        this._displayName = null;
         this._name = name || Math.random().toString(36).substring(7);
         this._detailLink = (name === 'id');
         this._type = "string";
@@ -39,6 +40,15 @@ class Field {
 
     type() {
         return this._type;
+    }
+
+    displayName() {
+        if(arguments.length) {
+            this._displayName = arguments[0];
+            return this;
+        }
+
+        return this._displayName;
     }
 
     name() {

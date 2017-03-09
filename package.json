@@ -3,8 +3,8 @@
   "version": "0.12.1",
   "private": false,
   "files": [
-      "*.md",
-      "lib"
+    "*.md",
+    "lib"
   ],
   "repository": {
     "type": "git",
@@ -14,13 +14,14 @@
     "node": ">=0.10.0"
   },
   "devDependencies": {
-    "babel": "^5.5.3",
+    "babel": "^6.23.0",
+    "babel-cli": "^6.23.0",
     "chai": "^2.3.0",
     "mocha": "^2.2.5",
     "sinon": "^1.14.1"
   },
   "scripts": {
-      "prepublish": "make transpile",
-      "test": "make test"
+    "prepublish": "make transpile",
+    "test": "make test"
   }
 }
